@@ -26,7 +26,7 @@ OOTD Mini Program 是一个基于微信小程序 + Node.js 后端 + Coze Workflo
 ### 1. 克隆仓库
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/CY-CPU1011/ootd-mini-program.git
 cd ootd-mini-program
 ```
 
