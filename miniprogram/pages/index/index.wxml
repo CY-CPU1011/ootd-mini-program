@@ -1,0 +1,89 @@
+<!--index.wxml-->
+<scroll-view class="scrollarea" scroll-y type="list">
+  <view class="container">
+    <!-- 状态栏 - 微信小程序会自动处理 -->
+
+    <!-- 主内容区 -->
+    <view class="main-content">
+      <!-- 今日天气卡片 -->
+      <block wx:if="{{!isWeatherLoading}}">
+        <view class="weather-card">
+          <view class="weather-info">
+            <view>
+              <view class="city">{{weatherData.city}}</view>
+              <view class="date">{{currentDate}} {{currentDay}}</view>
+              <view class="temp-container">
+                <text class="temp-now">{{weatherData.temperature}}</text>
+                <text class="weather-desc">{{weatherData.description}} · 湿度 {{weatherData.humidity}}</text>
+              </view>
+            </view>
+            <view class="weather-icon-container">
+              <view class="weather-icon">
+                <text class="{{weatherData.weatherIcon || 'icon-sun'}}"></text>
+              </view>
+              <view class="temp-range">{{weatherData.lowTemp}} / {{weatherData.highTemp}}</view>
+            </view>
+          </view>
+        </view>
+      </block>
+      <block wx:else>
+        <weather-skeleton type="today"></weather-skeleton>
+      </block>
+
+      <!-- 近7日天气卡片 -->
+      <block wx:if="{{!isWeatherLoading}}">
+        <view class="forecast-card">
+          <view class="forecast-title">近7日天气</view>
+          <scroll-view scroll-x class="forecast-scroll">
+            <view class="forecast-list">
+              <view class="forecast-item" wx:for="{{forecastData}}" wx:key="day">
+                <text class="day">{{item.day}}</text>
+                <text class="{{item.icon}} forecast-icon"></text>
+                <text class="high-temp">{{item.highTemp}}</text>
+                <text class="low-temp">{{item.lowTemp}}</text>
+              </view>
+            </view>
+          </scroll-view>
+        </view>
+      </block>
+      <block wx:else>
+        <weather-skeleton type="forecast"></weather-skeleton>
+      </block>
+
+      <!-- 今日穿搭风格卡片 -->
+      <view class="style-card">
+        <view class="style-title">今日穿搭风格</view>
+        <view class="style-subtitle">
+          选择你今天想要的穿搭风格
+          <text class="gender-info">({{gender === 1 ? '男生' : '女生'}})</text>
+        </view>
+
+        <view class="style-chips">
+          <view class="style-chip {{selectedStyle === item ? 'selected' : ''}}"
+                wx:for="{{styleOptions}}"
+                wx:key="index"
+                bindtap="selectStyle"
+                data-style="{{item}}">
+            {{item}}
+          </view>
+        </view>
+
+        <view class="generate-btn-container">
+          <button class="generate-btn" bindtap="generateOOTD">
+            生成今日OOTD
+            <text class="icon-magic"></text>
+          </button>
+        </view>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+
+<!-- OOTD弹窗 -->
+<ootd-popup
+  visible="{{showOOTDPopup}}"
+  selectedStyle="{{selectedStyle}}"
+  weatherData="{{weatherData}}"
+  userInfo="{{userInfo}}"
+  bind:close="closeOOTDPopup">
+</ootd-popup>

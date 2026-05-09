@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "ootd-popup": "../../components/ootd-popup/ootd-popup",
+    "weather-skeleton": "../../components/weather-skeleton/weather-skeleton"
+  }
+}

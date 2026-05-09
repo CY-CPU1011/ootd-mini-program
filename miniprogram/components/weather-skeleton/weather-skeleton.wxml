@@ -1,0 +1,35 @@
+<!-- components/weather-skeleton/weather-skeleton.wxml -->
+<view class="skeleton-container {{type === 'today' ? 'today-skeleton' : 'forecast-skeleton'}}">
+  <block wx:if="{{type === 'today'}}">
+    <!-- 今日天气骨架屏 -->
+    <view class="weather-card skeleton">
+      <view class="weather-info">
+        <view>
+          <view class="city-skeleton skeleton-animation"></view>
+          <view class="date-skeleton skeleton-animation"></view>
+          <view class="temp-skeleton skeleton-animation"></view>
+          <view class="desc-skeleton skeleton-animation"></view>
+        </view>
+        <view class="weather-icon-skeleton">
+          <view class="icon-skeleton skeleton-animation"></view>
+          <view class="range-skeleton skeleton-animation"></view>
+        </view>
+      </view>
+    </view>
+  </block>
+
+  <block wx:else>
+    <!-- 近7日天气骨架屏 -->
+    <view class="forecast-card skeleton">
+      <view class="title-skeleton skeleton-animation"></view>
+      <view class="forecast-list-skeleton">
+        <view class="forecast-item-skeleton" wx:for="{{7}}" wx:key="index">
+          <view class="day-skeleton skeleton-animation"></view>
+          <view class="icon-skeleton skeleton-animation"></view>
+          <view class="high-temp-skeleton skeleton-animation"></view>
+          <view class="low-temp-skeleton skeleton-animation"></view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

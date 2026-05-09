@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首次使用引导</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            min-height: 100vh;
+        }
+
+        .status-bar {
+            height: 44px;
+            background-color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 16px;
+            font-size: 12px;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        .onboarding-container {
+            max-width: 100%;
+            padding: 20px;
+        }
+
+        .onboarding-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .onboarding-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #07c160, #10b981);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+        }
+
+        .onboarding-icon i {
+            font-size: 40px;
+            color: white;
+        }
+
+        .form-card {
+            background-color: white;
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            font-size: 16px;
+            transition: all 0.2s;
+        }
+
+        .form-input:focus {
+            border-color: #07c160;
+            box-shadow: 0 0 0 3px rgba(7, 193, 96, 0.1);
+            outline: none;
+        }
+
+        .gender-options {
+            display: flex;
+            gap: 12px;
+        }
+
+        .gender-option {
+            flex: 1;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .gender-option.selected {
+            border-color: #07c160;
+            background-color: #f0f9f4;
+        }
+
+        .gender-option i {
+            font-size: 24px;
+            margin-bottom: 8px;
+            color: #999;
+        }
+
+        .gender-option.selected i {
+            color: #07c160;
+        }
+
+        .submit-btn {
+            background-color: #07c160;
+            color: white;
+            border-radius: 12px;
+            padding: 14px;
+            font-weight: bold;
+            width: 100%;
+            margin-top: 30px;
+            box-shadow: 0 4px 12px rgba(7, 193, 96, 0.3);
+            transition: all 0.2s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(7, 193, 96, 0.4);
+        }
+
+        .progress-bar {
+            height: 4px;
+            background-color: #e0e0e0;
+            border-radius: 2px;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background-color: #07c160;
+            width: 33.33%;
+            transition: width 0.3s ease;
+        }
+
+        .step-indicator {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .step {
+            font-size: 12px;
+            color: #999;
+        }
+
+        .step.active {
+            color: #07c160;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <!-- 状态栏 -->
+    <div class="status-bar">
+        <div>20:15</div>
+        <div class="flex space-x-2">
+            <i class="fas fa-signal"></i>
+            <i class="fas fa-wifi"></i>
+            <i class="fas fa-battery-full"></i>
+        </div>
+    </div>
+
+    <div class="onboarding-container">
+        <!-- 引导头部 -->
+        <div class="onboarding-header">
+            <div class="onboarding-icon">
+                <i class="fas fa-tshirt"></i>
+            </div>
+            <h1 class="text-2xl font-bold mb-2">欢迎使用OOTD</h1>
+            <p class="text-gray-500">请完成以下信息，帮助我们为你提供个性化穿搭建议</p>
+        </div>
+
+        <!-- 表单卡片 -->
+        <div class="form-card">
+            <div class="form-group">
+                <label class="form-label">你所在的城市</label>
+                <input type="text" class="form-input" placeholder="例如：北京、上海、广州..." id="city-input">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">性别</label>
+                <div class="gender-options">
+                    <div class="gender-option" onclick="selectGender('male', this)">
+                        <i class="fas fa-mars"></i>
+                        <div>男生</div>
+                    </div>
+                    <div class="gender-option" onclick="selectGender('female', this)">
+                        <i class="fas fa-venus"></i>
+                        <div>女生</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">个人特性（描述你的穿衣风格偏好）</label>
+                <textarea class="form-input" rows="3" placeholder="例如：喜欢简约风格，偏爱明亮色调，注重舒适度..." id="traits-input"></textarea>
+            </div>
+        </div>
+
+        <!-- 提示卡片 -->
+        <div class="bg-blue-50 p-4 rounded-xl mb-6">
+            <div class="flex">
+                <i class="fas fa-info-circle text-blue-500 mr-3 mt-1"></i>
+                <p class="text-sm text-blue-700">
+                    这些信息将帮助我们为你提供更准确的天气预报和穿搭建议，你随时可以在"我的"页面中修改这些信息。
+                </p>
+            </div>
+        </div>
+
+        <!-- 完成按钮 -->
+        <button class="submit-btn" onclick="goToNextStep()">
+            完成
+            <i class="fas fa-check ml-2"></i>
+        </button>
+    </div>
+
+    <script>
+        let selectedGender = '';
+
+        function selectGender(gender, element) {
+            selectedGender = gender;
+
+            // 移除所有性别选项的选中状态
+            document.querySelectorAll('.gender-option').forEach(option => {
+                option.classList.remove('selected');
+            });
+
+            // 添加当前选项的选中状态
+            element.classList.add('selected');
+        }
+
+        function goToNextStep() {
+            const city = document.getElementById('city-input').value;
+            const traits = document.getElementById('traits-input').value;
+
+            // 简单验证
+            if (!city) {
+                alert('请输入你所在的城市');
+                return;
+            }
+
+            if (!selectedGender) {
+                alert('请选择你的性别');
+                return;
+            }
+
+            if (!traits) {
+                alert('请描述你的个人特性');
+                return;
+            }
+
+            // 在实际应用中，这里会保存用户输入并进入下一步
+            // 为了演示，我们直接跳转到首页
+            window.location.href = 'home.html';
+        }
+    </script>
+</body>
+</html>

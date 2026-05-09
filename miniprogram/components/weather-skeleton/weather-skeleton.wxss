@@ -1,0 +1,123 @@
+/* components/weather-skeleton/weather-skeleton.wxss */
+.skeleton-container {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.skeleton {
+  background-color: #f5f5f5;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* 骨架屏动画 */
+.skeleton-animation {
+  background: linear-gradient(90deg, #f2f2f2 25%, #e6e6e6 50%, #f2f2f2 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* 今日天气骨架屏样式 */
+.today-skeleton .weather-card {
+  padding: 20px;
+  height: 160px;
+}
+
+.weather-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.city-skeleton {
+  width: 80px;
+  height: 28px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.date-skeleton {
+  width: 120px;
+  height: 20px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+
+.temp-skeleton {
+  width: 100px;
+  height: 48px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.desc-skeleton {
+  width: 150px;
+  height: 20px;
+  border-radius: 4px;
+}
+
+.weather-icon-skeleton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icon-skeleton {
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  margin-bottom: 8px;
+}
+
+.range-skeleton {
+  width: 70px;
+  height: 20px;
+  border-radius: 4px;
+}
+
+/* 近7日天气骨架屏样式 */
+.forecast-skeleton .forecast-card {
+  padding: 20px;
+  height: 160px;
+}
+
+.title-skeleton {
+  width: 100px;
+  height: 24px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+
+.forecast-list-skeleton {
+  display: flex;
+  overflow-x: auto;
+}
+
+.forecast-item-skeleton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.day-skeleton {
+  width: 40px;
+  height: 20px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.high-temp-skeleton, .low-temp-skeleton {
+  width: 30px;
+  height: 18px;
+  border-radius: 4px;
+  margin-top: 4px;
+}

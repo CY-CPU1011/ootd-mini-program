@@ -1,0 +1,42 @@
+<!--profile.wxml-->
+<scroll-view class="scrollarea" scroll-y type="list">
+  <view class="container">
+    <!-- 个人信息卡片 -->
+    <view class="info-card">
+      <view class="section-title">个人信息</view>
+
+      <view class="info-item">
+        <view class="info-icon">
+          <text class="icon-location"></text>
+        </view>
+        <view class="info-content">
+          <view class="info-label">城市</view>
+          <view class="info-value">{{userInfo.city || '北京'}}</view>
+        </view>
+        <view class="edit-btn" bindtap="editCity">编辑</view>
+      </view>
+
+      <view class="info-item">
+        <view class="info-icon">
+          <text class="icon-gender"></text>
+        </view>
+        <view class="info-content">
+          <view class="info-label">性别</view>
+          <view class="info-value">{{userInfo.gender === 1 ? '男生' : (userInfo.gender === 2 ? '女生' : '未设置')}}</view>
+        </view>
+        <view class="edit-btn" bindtap="editGender">编辑</view>
+      </view>
+
+      <view class="info-item">
+        <view class="info-icon">
+          <text class="icon-fingerprint"></text>
+        </view>
+        <view class="info-content">
+          <view class="info-label">个人特性</view>
+          <view class="info-value">{{userInfo.personalTrait || '喜欢简约时尚，偏爱明亮色调'}}</view>
+        </view>
+        <view class="edit-btn" bindtap="editTrait">编辑</view>
+      </view>
+    </view>
+  </view>
+</scroll-view>

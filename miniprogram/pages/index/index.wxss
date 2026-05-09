@@ -1,0 +1,250 @@
+/**index.wxss**/
+page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  padding-bottom: 60px; /* 为更高的标签栏留出空间 */
+  box-sizing: border-box;
+}
+
+.scrollarea {
+  flex: 1;
+  overflow-y: hidden;
+}
+
+.container {
+  padding: 32rpx;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 40rpx;
+  padding: 0;
+  width: 100%;
+  padding-bottom: 32rpx;
+}
+
+/* 天气卡片样式 */
+.weather-card {
+  background: linear-gradient(135deg, #5B86E5, #36D1DC);
+  border-radius: 32rpx;
+  color: white;
+  overflow: hidden;
+  box-shadow: 0 8rpx 24rpx rgba(91, 134, 229, 0.3);
+  padding: 40rpx;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.weather-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.city {
+  font-size: 36rpx;
+  font-weight: 600;
+  margin-bottom: 4rpx;
+}
+
+.date {
+  font-size: 24rpx;
+  opacity: 0.8;
+}
+
+.temp-container {
+  margin-top: 48rpx;
+}
+
+.temp-now {
+  font-size: 96rpx;
+  font-weight: 300;
+  line-height: 1;
+}
+
+.weather-desc {
+  font-size: 24rpx;
+  opacity: 0.8;
+  display: block;
+}
+
+.weather-icon-container {
+  text-align: center;
+}
+
+.weather-icon {
+  font-size: 96rpx;
+  margin-bottom: 16rpx;
+}
+
+.temp-range {
+  font-size: 24rpx;
+}
+
+/* 预报卡片样式 */
+.forecast-card {
+  background: white;
+  border-radius: 32rpx;
+  overflow: hidden;
+  box-shadow: 0 8rpx 24rpx rgba(0, 0, 0, 0.05);
+  padding: 32rpx;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.forecast-title {
+  font-size: 32rpx;
+  font-weight: 600;
+  margin-bottom: 24rpx;
+}
+
+.forecast-scroll {
+  white-space: nowrap;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 8rpx;
+}
+
+.forecast-list {
+  display: flex;
+  padding-bottom: 16rpx;
+  padding-top: 8rpx;
+}
+
+.forecast-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16rpx 32rpx;
+  min-width: 120rpx;
+}
+
+.day {
+  font-size: 24rpx;
+  margin-bottom: 8rpx;
+}
+
+.forecast-icon {
+  font-size: 48rpx;
+  margin: 16rpx 0;
+}
+
+.high-temp {
+  font-size: 24rpx;
+  font-weight: 500;
+}
+
+.low-temp {
+  font-size: 24rpx;
+  color: #999;
+}
+
+/* 风格卡片样式 */
+.style-card {
+  background: white;
+  border-radius: 32rpx;
+  overflow: hidden;
+  box-shadow: 0 8rpx 24rpx rgba(0, 0, 0, 0.05);
+  padding: 32rpx;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.style-title {
+  font-size: 32rpx;
+  font-weight: 600;
+  margin-bottom: 8rpx;
+}
+
+.style-subtitle {
+  font-size: 24rpx;
+  color: #999;
+  margin-bottom: 24rpx;
+}
+
+.style-chips {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -6rpx;
+}
+
+.style-chip {
+  background-color: #f0f0f0;
+  border-radius: 32rpx;
+  padding: 12rpx 24rpx;
+  margin: 8rpx 6rpx;
+  display: inline-block;
+  font-size: 24rpx;
+}
+
+.style-chip.selected {
+  background-color: #07c160;
+  color: white;
+}
+
+.generate-btn-container {
+  margin-top: 48rpx;
+  text-align: center;
+  padding: 8rpx 0;
+}
+
+.generate-btn {
+  background-color: #07c160;
+  color: white;
+  border-radius: 48rpx;
+  padding: 24rpx 48rpx;
+  font-weight: bold;
+  box-shadow: 0 8rpx 24rpx rgba(7, 193, 96, 0.3);
+  display: inline-block;
+  line-height: 1.5;
+}
+
+/* 图标样式 - 使用伪元素模拟图标 */
+.icon-sun:before {
+  content: "☀️";
+}
+
+.icon-cloud-sun:before {
+  content: "⛅";
+}
+
+.icon-cloud:before {
+  content: "☁️";
+}
+
+.icon-cloud-rain:before {
+  content: "🌧️";
+}
+
+.icon-cloud-snow:before {
+  content: "❄️";
+}
+
+.icon-tshirt:before {
+  content: "👕";
+}
+
+.icon-user:before {
+  content: "👤";
+}
+
+.icon-magic:before {
+  content: "✨";
+}
+
+/* 性别信息样式 */
+.gender-info {
+  font-size: 24rpx;
+  color: #666;
+  margin-left: 10rpx;
+  padding: 4rpx 12rpx;
+  background-color: #f0f0f0;
+  border-radius: 12rpx;
+}

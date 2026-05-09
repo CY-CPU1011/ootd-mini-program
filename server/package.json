@@ -1,0 +1,29 @@
+{
+  "name": "ootd-mini-program-server",
+  "version": "1.0.0",
+  "description": "Express API server for the OOTD WeChat Mini Program.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "check": "node --check index.js",
+    "test": "pnpm run check"
+  },
+  "keywords": [
+    "ootd",
+    "wechat-miniprogram",
+    "coze",
+    "express"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.16.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}

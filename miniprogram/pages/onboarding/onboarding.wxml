@@ -1,0 +1,52 @@
+<!--onboarding.wxml-->
+<view class="onboarding-container">
+  <!-- 引导头部 -->
+  <view class="onboarding-header">
+    <view class="onboarding-icon">
+      <text class="icon-tshirt"></text>
+    </view>
+    <view class="title">欢迎使用OOTD</view>
+    <view class="subtitle">请完成以下信息，帮助我们为你提供个性化穿搭建议</view>
+  </view>
+
+  <!-- 表单卡片 -->
+  <view class="form-card">
+    <view class="form-group">
+      <view class="form-label">你所在的城市</view>
+      <input type="text" class="form-input" placeholder="请输入城市名称" bindinput="onCityInput" value="{{city}}"/>
+    </view>
+
+    <view class="form-group">
+      <view class="form-label">性别</view>
+      <view class="gender-options">
+        <view class="gender-option {{gender === 1 ? 'selected' : ''}}" bindtap="selectGender" data-gender="1">
+          <text class="icon-male"></text>
+          <view>男生</view>
+        </view>
+        <view class="gender-option {{gender === 2 ? 'selected' : ''}}" bindtap="selectGender" data-gender="2">
+          <text class="icon-female"></text>
+          <view>女生</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="form-group">
+      <view class="form-label">个人特性（描述你的个人特性）</view>
+      <textarea class="form-input" placeholder="我是一个短发、阳光、皮肤白皙的人" bindinput="onTraitInput" value="{{personalTrait}}"></textarea>
+    </view>
+  </view>
+
+  <!-- 提示卡片 -->
+  <view class="tip-card">
+    <view class="tip-content">
+      <text class="icon-info"></text>
+      <text class="tip-text">这些信息将帮助我们为你提供更准确的天气预报和穿搭建议，你随时可以在"我的"页面中修改这些信息。</text>
+    </view>
+  </view>
+
+  <!-- 完成按钮 -->
+  <button class="submit-btn" bindtap="onSubmit">
+    完成
+    <text class="icon-check"></text>
+  </button>
+</view>

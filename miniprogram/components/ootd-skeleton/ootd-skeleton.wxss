@@ -1,0 +1,75 @@
+/* components/ootd-skeleton/ootd-skeleton.wxss */
+.ootd-skeleton {
+  padding: 30rpx;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 骨架屏动画 */
+.skeleton-animation {
+  background: linear-gradient(90deg, #f2f2f2 25%, #e6e6e6 50%, #f2f2f2 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* 头部骨架 */
+.ootd-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30rpx;
+}
+
+.style-skeleton {
+  width: 240rpx;
+  height: 40rpx;
+  border-radius: 8rpx;
+}
+
+.close-skeleton {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+}
+
+/* 穿搭建议骨架 */
+.advice-container {
+  margin-bottom: 40rpx;
+}
+
+.advice-title-skeleton {
+  width: 200rpx;
+  height: 40rpx;
+  border-radius: 8rpx;
+  margin-bottom: 20rpx;
+}
+
+.advice-text-skeleton {
+  width: 100%;
+  height: 30rpx;
+  border-radius: 8rpx;
+  margin-bottom: 16rpx;
+}
+
+/* 图片骨架 */
+.images-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.image-skeleton {
+  width: 30%;
+  height: 300rpx;
+  border-radius: 16rpx;
+  margin-bottom: 20rpx;
+}

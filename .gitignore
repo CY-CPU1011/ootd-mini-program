@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+server/node_modules/
+
+# Environment variables
+.env
+*.env.local
+server/.env
+
+# WeChat DevTools private/local config
+miniprogram/project.private.config.json
+
+# Logs and caches
+*.log
+.DS_Store
+dist/
+coverage/
+
+# Editors
+.idea/
+.vscode/

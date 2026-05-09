@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "ootd-skeleton": "../ootd-skeleton/ootd-skeleton"
+  }
+}

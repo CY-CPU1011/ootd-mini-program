@@ -1,0 +1,23 @@
+<!--components/ootd-skeleton/ootd-skeleton.wxml-->
+<view class="ootd-skeleton">
+  <!-- 头部信息骨架 -->
+  <view class="ootd-header">
+    <view class="style-skeleton skeleton-animation"></view>
+    <view class="close-skeleton skeleton-animation"></view>
+  </view>
+
+  <!-- 穿搭建议骨架 -->
+  <view class="advice-container">
+    <view class="advice-title-skeleton skeleton-animation"></view>
+    <view class="advice-text-skeleton skeleton-animation"></view>
+    <view class="advice-text-skeleton skeleton-animation"></view>
+    <view class="advice-text-skeleton skeleton-animation"></view>
+  </view>
+
+  <!-- 图片骨架 -->
+  <view class="images-container">
+    <view class="image-skeleton skeleton-animation"></view>
+    <view class="image-skeleton skeleton-animation"></view>
+    <view class="image-skeleton skeleton-animation"></view>
+  </view>
+</view>
